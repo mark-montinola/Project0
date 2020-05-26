@@ -1,0 +1,301 @@
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+article, aside, footer, header, main, nav, section {
+  display: block;
+}
+
+body {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 1rem;
+  font-weight: 300 !important;
+  line-height: 1.7;
+  margin: 0;
+  text-align: left;
+  color: #343a40;
+  background-color: #fff;
+  position: relative;
+}
+
+[tabindex="-1"]:focus {
+  outline: 0 !important;
+}
+
+hr {
+  overflow: visible;
+  box-sizing: content-box;
+  height: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.3rem;
+}
+
+dl, ol, ul {
+  margin-top: 0;
+}
+
+ol ol, ol ul, ul ol, ul ul {
+  margin-bottom: 0;
+}
+
+ul.no-bullets {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a, a:hover {
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:not([href]):not([tabindex]):focus {
+  outline: 0;
+}
+
+.pb-12, .py-12 {
+  padding-bottom: 6rem !important;
+}
+
+.pt-12, .py-12 {
+  padding-top: 6rem !important;
+}
+
+section {
+  position: relative;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.title, .subtitle {
+  font-weight: 300;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+}
+
+@media (min-width: 992px) {
+  .pb-lg-15, .py-lg-15 {
+    padding-bottom: 12.5rem !important;
+  }
+}
+@media (min-width: 992px) {
+  .pt-lg-15, .py-lg-15 {
+    padding-top: 12.5rem !important;
+  }
+}
+header #nav {
+  background: transparent !important;
+  transition: 0.75s ease;
+}
+header #nav.scrolled {
+  background: #1d1d1d !important;
+}
+header .section-hero {
+  height: 100vh;
+  background-position: 50% 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+footer {
+  min-height: 300px;
+  background-color: #1d1d1d;
+  margin-top: 20px;
+}
+footer h5 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #f5a637;
+}
+footer p, footer a, footer li, footer .copyright {
+  color: #777;
+}
+footer li {
+  list-style-type: none;
+}
+footer ul {
+  padding: unset;
+}
+
+.section-filler::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background: linear-gradient(#fff, rgba(255, 255, 255, 0.1) 30%, transparent), linear-gradient(to bottom right, #fff 0, #fff 15%, transparent 30%, transparent);
+}
+
+.section-filler {
+  height: 100vh;
+  min-height: 500px;
+  background: url(https://i.vimeocdn.com/video/524253525.jpg?mw=1920&mh=1080&q=70) no-repeat 50%/cover;
+  padding: 6rem 0;
+}
+
+.section-gallery-item {
+  padding: 5px;
+}
+.section-gallery-item div {
+  height: 300px;
+  background-color: #6c757d;
+}
+
+.carousel {
+  background: #EEE;
+}
+
+.carousel-cell {
+  width: 28%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+
+.carousel-cell.is-selected {
+  background: #ED2;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+/* Card SVG */
+.card-title svg {
+  color: #009688;
+}
+
+.section-about .section-about-image {
+  height: 400px;
+  background-position: 50% 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: sticky;
+  top: 0;
+  margin-bottom: 100px;
+  z-index: -10;
+}
+
+/* Resume */
+#img-profile {
+  border-radius: 50%;
+}
+
+.section-resume {
+  max-width: 1280px;
+}
+.section-resume hr {
+  margin-bottom: 30px;
+}
+.section-resume h4 {
+  font-size: 1.2rem;
+}
+.section-resume h5 {
+  font-size: 1rem;
+}
+.section-resume a, .section-resume a:hover {
+  color: #343a40;
+}
+@media (min-width: 992px) {
+  .section-resume .pt-lg-15, .section-resume .py-lg-15 {
+    padding-top: 12.5rem !important;
+  }
+}
+@media (max-width: 575px) {
+  .section-resume {
+    padding: 20px 0px;
+  }
+}
+@media (min-width: 576px) {
+  .section-resume {
+    padding: 20px 0px;
+  }
+}
+@media (min-width: 768px) {
+  .section-resume {
+    padding: 40px 0px;
+  }
+}
+@media (min-width: 992px) {
+  .section-resume {
+    padding: 40px 100px;
+  }
+}
+@media (min-width: 1200px) {
+  .section-resume {
+    padding: 40px 150px;
+  }
+}
+.section-resume .section-resume-profile-details svg {
+  margin-right: 10px;
+}
+.section-resume .ability-title {
+  display: inline-block;
+  width: 50%;
+}
+.section-resume .ability-score {
+  float: right;
+}
+
+.section-resume-work .section-resume-work-header p {
+  padding-left: 15px;
+  line-height: 0.8rem;
+}
+.section-resume-work .section-resume-work-detail {
+  padding-left: 15px;
+}
+
+.section-resume-education p {
+  line-height: 0.8rem;
+  padding-left: 15px;
+}
+
+/*# sourceMappingURL=style.css.map */
