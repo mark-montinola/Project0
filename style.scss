@@ -1,0 +1,358 @@
+$blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #fff;
+$gray: #6c757d;
+$gray-dark: #343a40;
+$primary: #f5a637;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$font-family-sans-serif: "Lato", sans-serif;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+*, :after, :before {
+    box-sizing: border-box
+}
+
+article, aside, footer, header, main, nav, section {
+    display: block
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+    font-weight: 300!important;
+    line-height: 1.7;
+    margin: 0;
+    text-align: left;
+    color: $dark;
+    background-color: $white;
+    position: relative;
+}
+
+[tabindex="-1"]:focus {
+    outline: 0 !important
+}
+
+hr {
+    overflow: visible;
+    box-sizing: content-box;
+    height: 0
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    // font-weight: 300;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0.3rem
+}
+
+dl, ol, ul {
+    margin-top: 0
+}
+
+ol ol, ol ul, ul ol, ul ul {
+    margin-bottom: 0
+}
+
+ul.no-bullets {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+dt {
+    font-weight: 700
+}
+
+dd {
+    margin-bottom: .5rem;
+    margin-left: 0
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent
+}
+
+a, a:hover {
+    color: $white;
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+a:not([href]):not([tabindex]):focus {
+    outline: 0
+}
+
+.pb-12, .py-12 {
+    padding-bottom: 6rem!important;
+}
+
+.pt-12, .py-12 {
+    padding-top: 6rem!important;
+}
+
+section {
+    position: relative;
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.title, .subtitle {
+    font-weight: 300;
+}
+
+.title {
+    font-size: 3rem;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+}
+
+@media (min-width: 992px) {
+    .pb-lg-15, .py-lg-15 {
+        padding-bottom: 12.5rem!important;
+    }
+}
+
+@media (min-width: 992px) {
+    .pt-lg-15, .py-lg-15 {
+        padding-top: 12.5rem!important;
+    }
+}
+
+// HEADER
+header {
+    #nav {
+        background: transparent !important;
+        transition: 0.75s ease;
+    }
+
+    #nav.scrolled {
+        background: #1d1d1d !important;
+    }
+
+    .section-hero {
+        height: 100vh;
+        background-position: 50% 10%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+}
+
+// FOOTER
+footer {
+    min-height: 300px;
+    background-color: #1d1d1d;
+    margin-top: 20px;
+
+    h5 {
+        font-size: .75rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: #f5a637;
+    }
+
+    p, a, li, .copyright {
+        color: #777;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    ul {
+        padding: unset;
+    }
+}
+
+.section-filler::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    background: linear-gradient(#fff, hsla(0, 0%, 100%, .1) 30%, transparent), linear-gradient(to bottom right, #fff 0, #fff 15%, transparent 30%, transparent);
+}
+
+.section-filler {
+    height: 100vh;
+    min-height: 500px;
+    background: url(https://i.vimeocdn.com/video/524253525.jpg?mw=1920&mh=1080&q=70) no-repeat 50%/cover;
+    padding: 6rem 0;
+}
+
+.section-gallery-item {
+    padding: 5px;
+    div {
+        height: 300px;
+        background-color: $gray;
+    }
+}
+
+
+.carousel {
+    background: #EEE;
+  }
+  
+.carousel-cell {
+    width: 28%;
+    height: 200px;
+    margin-right: 10px;
+    background: #8C8;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+}
+
+.carousel-cell.is-selected {
+    background: #ED2;
+}
+
+/* cell number */
+.carousel-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(carousel-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}
+
+
+/* Card SVG */
+.card-title svg {
+    color: #009688;
+}
+
+// ABOUT
+.section-about {
+    .section-about-image {
+        height: 400px;
+        background-position: 50% 10%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: sticky;
+        top: 0;
+        margin-bottom: 100px;
+        z-index: -10;
+    }
+}
+
+/* Resume */
+#img-profile {
+    border-radius: 50%;
+}
+
+.section-resume {
+    max-width: 1280px;
+    hr {
+        margin-bottom: 30px;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
+    a, a:hover {
+        color: $dark;
+    }
+
+    @media (min-width: 992px) {
+        .pt-lg-15, .py-lg-15 {
+            padding-top: 12.5rem!important;
+        }
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (max-width: 575px) {
+        padding: 20px 0px;
+    }
+
+    @media (min-width: 576px) {
+        padding: 20px 0px;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) {
+        padding: 40px 0px;
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {
+        padding: 40px 100px;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        padding: 40px 150px;
+    }
+
+    .section-resume-profile-details svg {
+        margin-right: 10px;
+    }
+
+    .ability-title {
+        display: inline-block;
+        width: 50%;
+    }
+    .ability-score {
+        float: right;
+    }
+}
+
+.section-resume-work {
+    .section-resume-work-header {
+        p {
+            padding-left: 15px;
+            line-height: .8rem;
+        }
+    }
+    
+    .section-resume-work-detail {
+        padding-left: 15px;
+    }
+}
+
+.section-resume-education {
+    p {
+        line-height: .8rem;
+        padding-left: 15px;
+    }
+}
