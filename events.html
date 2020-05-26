@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>My Website</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <!-- NAVIGATION -->
+        <section class="container-fluid fixed-top p-0">
+            <ul id="nav" class="nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="discover.html">Discover</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="events.html">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+            </ul>
+        </section>
+    
+        <!-- HERO -->
+        <section class="section-hero" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(53, 24, 26, 0.4) 90.16%), url(https://images.alphacoders.com/533/thumb-1920-533936.jpg);">
+            <div class="row">
+                <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
+                    <div class="py-12 py-lg-15 text-light text-center">
+                        <h1 class="font-weight-bold text-white mb-3 display-4">
+                            Events
+                        </h1>
+                        <p class="lead mb-0">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                            nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <!-- EVENTS -->
+        <section class="py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h3 class="text-center mb-3">Upcomming Events</h3>
+                    <table class="table table-bordered px-2 px-md-5">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Date</th>
+                                <th>Event Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>August 1, 2020</td>
+                                <td>Sample Event</td>
+                            </tr>
+                            <tr>
+                                <td>August 1, 2020</td>
+                                <td>Sample Event</td>
+                            </tr>
+                            <tr>
+                                <td>August 1, 2020</td>
+                                <td>Sample Event</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section class="py-5">
+            <h3 class="text-center mb-3">Our Gallery</h3>
+            <!-- Flickity HTML init -->
+            <div class="carousel" data-flickity='{"wrapAround": true}'>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="p-4">
+        <div class="row">
+
+            <!-- NAVIGATE -->
+            <section class="col-12 col-md-2">
+                <h5 class="section-footer-heading">
+                    Navigate
+                </h5>
+                <div class="section-footer-navigate">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ABOUT US -->
+            <section class="col-12 col-md-6">
+                <h5 class="section-footer-heading">
+                    About Us
+                </h5>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorum, sint corporis nostrum, possimus unde eos vitae eius quasi saepe.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorum, sint corporis nostrum, possimus unde eos vitae eius quasi saepe.
+                </p>
+
+            </section>
+
+            <!-- CONTACT INFO -->
+            <section class="col-12 col-md-4">
+            
+                <!-- HEADER 1 -->
+                <h5 class="section-footer-heading">
+                    Contact info
+                </h5>
+
+                <!-- BODY 1 -->
+                <ul class="section-footer-info">
+                    <li>
+                        <svg class="bi bi-geo-alt" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 002 6c0 4.314 6 10 6 10zm0-7a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                        </svg>
+                        1234 Edmonton, Canada
+                    </li>
+                    <li>
+                        <svg class="bi bi-phone" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M11 1H5a1 1 0 00-1 1v12a1 1 0 001 1h6a1 1 0 001-1V2a1 1 0 00-1-1zM5 0a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V2a2 2 0 00-2-2H5z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M8 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                        </svg>
+                        +1 123 456 7890
+                    </li>
+                    <li>
+                        <svg class="bi bi-envelope-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M.05 3.555L8 8.414l7.95-4.859A2 2 0 0014 2H2A2 2 0 00.05 3.555zM16 4.697l-5.875 3.59L16 11.743V4.697zm-.168 8.108L9.157 8.879 8 9.586l-1.157-.707-6.675 3.926A2 2 0 002 14h12a2 2 0 001.832-1.195zM0 11.743l5.875-3.456L0 4.697v7.046z"/>
+                        </svg>
+                        <a href="mailto:admin@domain.com">admin@domain.com</a>
+                    </li>
+                </ul>
+
+            </section>
+
+        </div>
+
+        <!-- COPYRIGHT -->
+        <section class="copyright">
+            © <span>2020</span> kram. All rights reserved.
+        </section>
+    </footer>
+
+    <script>
+        window.onscroll = function(){
+            let a = document.getElementById("nav");
+            if (document.documentElement.scrollTop >= 200) {
+                if (!a.classList.contains("scrolled")) {
+                    a.classList.toggle("scrolled");
+                }               
+            } else {
+                if (a.classList.contains("scrolled")) {
+                    a.classList.toggle("scrolled");
+                } 
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+</html>
