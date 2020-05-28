@@ -258,14 +258,16 @@
     </footer>
 
     <script>
+        // Navbar scroll effect
         window.onscroll = function () {
             let nav = document.getElementById("nav");
+            let navButton = document.getElementsByClassName("navbar-toggler")[0];
             if (document.documentElement.scrollTop >= 200) {
                 if (!nav.classList.contains("navbar-dark")) {
                     nav.classList.toggle("navbar-dark");
                 }
             } else {
-                if (nav.classList.contains("navbar-dark")) {
+                if (nav.classList.contains("navbar-dark") && navButton.classList.contains("collapsed")) {
                     nav.classList.toggle("navbar-dark");
                 }
             }
