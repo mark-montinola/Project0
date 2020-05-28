@@ -7,13 +7,13 @@ article, aside, footer, header, main, nav, section {
 }
 
 body {
-  font-family: "Open Sans", sans-serif !important;
+  font-family: "Lato", sans-serif;
   font-size: 1rem;
   font-weight: 300 !important;
   line-height: 1.7;
   margin: 0;
   text-align: left;
-  color: #343a40;
+  color: #6c757d;
   background-color: #fff;
   position: relative;
 }
@@ -31,6 +31,7 @@ hr {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  color: #343a40;
 }
 
 p {
@@ -71,7 +72,7 @@ a, a:hover {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:not([href]):not([tabindex]):focus {
@@ -88,6 +89,11 @@ a:not([href]):not([tabindex]):focus {
 
 section {
   position: relative;
+}
+
+table th {
+  background-color: #1d1d1d;
+  color: #cddc39;
 }
 
 .row {
@@ -121,8 +127,18 @@ header #nav {
   background: transparent !important;
   transition: 0.75s ease;
 }
-header #nav.scrolled {
+header #nav.navbar-dark {
   background: #1d1d1d !important;
+}
+header .navbar-brand, header .navbar-brand:hover, header .navbar-dark .navbar-brand, header .navbar-dark .navbar-brand:hover {
+  color: #cddc39;
+}
+header .navbar-toggler {
+  border: none;
+}
+header .navbar-toggler svg {
+  font-size: 2.5rem;
+  color: #fff;
 }
 header .section-hero {
   height: 100vh;
@@ -130,12 +146,15 @@ header .section-hero {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  position: relative;
+}
+header .section-hero .row {
+  height: 100%;
 }
 
 footer {
   min-height: 300px;
   background-color: #1d1d1d;
-  margin-top: 20px;
 }
 footer h5 {
   font-size: 0.75rem;
@@ -144,7 +163,7 @@ footer h5 {
   margin-bottom: 1rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #f5a637;
+  color: #cddc39;
 }
 footer p, footer a, footer li, footer .copyright {
   color: #777;
@@ -155,147 +174,155 @@ footer li {
 footer ul {
   padding: unset;
 }
+footer ul li svg {
+  padding-right: 5px;
+}
 
-.section-filler::before {
+.carousel {
+  background: #EEE;
+}
+.carousel .carousel-image {
+  display: block;
+  height: 300px;
+  /* set min-width, allow images to set cell width */
+  min-width: 150px;
+  max-width: 100%;
+  margin-right: 10px;
+  /* vertically center */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.section__preheading {
+  font-family: Lato, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.section__heading {
+  margin-bottom: 2.5rem;
+}
+
+.section__subheading {
+  margin-bottom: 2.5rem;
+}
+
+.section__heading + .section__subheading {
+  margin-top: -1.5rem;
+}
+
+.main-home .section-discover__heading {
+  color: #333333;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.main-home .section-discover__description {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  position: relative;
+  color: #333333;
+}
+.main-home .section-discover__description::before {
+  display: block;
+  width: 50px;
+  margin: 1rem 0;
+  content: "";
+  border-top: 5px solid #cddc39;
+}
+.main-home .section-discover__filler::before {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   content: "";
-  background: linear-gradient(#fff, rgba(255, 255, 255, 0.1) 30%, transparent), linear-gradient(to bottom right, #fff 0, #fff 15%, transparent 30%, transparent);
+  background: linear-gradient(#fff, rgba(255, 255, 255, 0.1) 30%, transparent), linear-gradient(to bottom right, #fff 0, #fff 15%, transparent 50%, transparent);
 }
-
-.section-filler {
+.main-home .section-discover__filler {
   height: 100vh;
   min-height: 500px;
-  background: url(https://i.vimeocdn.com/video/524253525.jpg?mw=1920&mh=1080&q=70) no-repeat 50%/cover;
+  background: url(https://images7.alphacoders.com/101/thumb-1920-1011523.jpg) no-repeat 50%/cover;
+  padding: 6rem 0;
+}
+.main-home .section-about__filler::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background: linear-gradient(#fff, rgba(255, 255, 255, 0.1) 40%, transparent), linear-gradient(to bottom, #fff 0, #fff 15%, transparent 50%, transparent);
+}
+.main-home .section-about__filler {
+  height: 100vh;
+  min-height: 500px;
+  background: url(https://www.eco.ca/wp-content/uploads/Working-home.jpg) no-repeat 50%/cover;
   padding: 6rem 0;
 }
 
-.section-gallery-item {
-  padding: 5px;
+.main-discover .section-discover__heading {
+  color: #333333;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
 }
-.section-gallery-item div {
-  height: 300px;
-  background-color: #6c757d;
+.main-discover .section-discover__description {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  position: relative;
+  color: #333333;
 }
-
-.carousel {
-  background: #EEE;
-}
-
-.carousel-cell {
-  width: 28%;
-  height: 200px;
-  margin-right: 10px;
-  background: #8C8;
-  border-radius: 5px;
-  counter-increment: carousel-cell;
-}
-
-.carousel-cell.is-selected {
-  background: #ED2;
-}
-
-/* cell number */
-.carousel-cell:before {
+.main-discover .section-discover__description::before {
   display: block;
-  text-align: center;
-  content: counter(carousel-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
+  width: 50px;
+  margin: 1rem 0;
+  content: "";
+  border-top: 5px solid #cddc39;
 }
-
-/* Card SVG */
-.card-title svg {
-  color: #009688;
-}
-
-.section-about .section-about-image {
-  height: 400px;
-  background-position: 50% 10%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: sticky;
+.main-discover .section-discover__filler::before {
+  position: absolute;
   top: 0;
-  margin-bottom: 100px;
-  z-index: -10;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background: linear-gradient(#fff, rgba(255, 255, 255, 0.1) 30%, transparent), linear-gradient(to bottom right, #fff 0, #fff 15%, transparent 50%, transparent);
+}
+.main-discover .section-discover__filler {
+  height: 100vh;
+  min-height: 500px;
+  background: url(https://images7.alphacoders.com/101/thumb-1920-1011523.jpg) no-repeat 50%/cover;
+  padding: 6rem 0;
 }
 
-/* Resume */
-#img-profile {
-  border-radius: 50%;
+.main-about .section-about__description {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  position: relative;
+  color: #333333;
 }
-
-.section-resume {
-  max-width: 1280px;
+.main-about .section-about__description::before {
+  display: block;
+  width: 50px;
+  margin: 1rem 0;
+  content: "";
+  border-top: 5px solid #cddc39;
 }
-.section-resume hr {
-  margin-bottom: 30px;
+.main-about .section-about__filler::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background: linear-gradient(#fff, rgba(255, 255, 255, 0.1) 40%, transparent), linear-gradient(to bottom, #fff 0, #fff 15%, transparent 50%, transparent);
 }
-.section-resume h4 {
-  font-size: 1.2rem;
-}
-.section-resume h5 {
-  font-size: 1rem;
-}
-.section-resume a, .section-resume a:hover {
-  color: #343a40;
-}
-@media (min-width: 992px) {
-  .section-resume .pt-lg-15, .section-resume .py-lg-15 {
-    padding-top: 12.5rem !important;
-  }
-}
-@media (max-width: 575px) {
-  .section-resume {
-    padding: 20px 0px;
-  }
-}
-@media (min-width: 576px) {
-  .section-resume {
-    padding: 20px 0px;
-  }
-}
-@media (min-width: 768px) {
-  .section-resume {
-    padding: 40px 0px;
-  }
-}
-@media (min-width: 992px) {
-  .section-resume {
-    padding: 40px 100px;
-  }
-}
-@media (min-width: 1200px) {
-  .section-resume {
-    padding: 40px 150px;
-  }
-}
-.section-resume .section-resume-profile-details svg {
-  margin-right: 10px;
-}
-.section-resume .ability-title {
-  display: inline-block;
-  width: 50%;
-}
-.section-resume .ability-score {
-  float: right;
-}
-
-.section-resume-work .section-resume-work-header p {
-  padding-left: 15px;
-  line-height: 0.8rem;
-}
-.section-resume-work .section-resume-work-detail {
-  padding-left: 15px;
-}
-
-.section-resume-education p {
-  line-height: 0.8rem;
-  padding-left: 15px;
+.main-about .section-about__filler {
+  height: 100vh;
+  min-height: 500px;
+  background: url(https://www.eco.ca/wp-content/uploads/Working-home.jpg) no-repeat 50%/cover;
+  padding: 6rem 0;
 }
 
 /*# sourceMappingURL=style.css.map */
