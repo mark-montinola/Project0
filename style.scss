@@ -26,6 +26,8 @@ $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 $font-family-sans-serif: "Lato", sans-serif;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$color: #cddc39;
+$background-color: #1d1d1d;
 
 *, :after, :before {
     box-sizing: border-box
@@ -42,7 +44,7 @@ body {
     line-height: 1.7;
     margin: 0;
     text-align: left;
-    color: $dark;
+    color: $gray;
     background-color: $white;
     position: relative;
 }
@@ -60,7 +62,7 @@ hr {
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: .5rem;
-    // font-weight: 300;
+    color: $dark;
 }
 
 p {
@@ -101,7 +103,7 @@ a, a:hover {
 }
 
 a:hover {
-    text-decoration: underline
+    text-decoration: none
 }
 
 a:not([href]):not([tabindex]):focus {
@@ -118,6 +120,13 @@ a:not([href]):not([tabindex]):focus {
 
 section {
     position: relative;
+}
+
+table {
+    th {
+        background-color: $background-color;
+        color: $color;
+    }
 }
 
 .row {
@@ -156,8 +165,21 @@ header {
         transition: 0.75s ease;
     }
 
-    #nav.scrolled {
-        background: #1d1d1d !important;
+    #nav.navbar-dark {
+        background: $background-color !important;
+    }
+
+    .navbar-brand, .navbar-brand:hover, .navbar-dark .navbar-brand, .navbar-dark .navbar-brand:hover {
+        color: $color;
+    }
+
+    .navbar-toggler {
+        border: none;
+    }
+
+    .navbar-toggler svg {
+        font-size: 2.5rem;
+        color: $white;
     }
 
     .section-hero {
@@ -166,14 +188,18 @@ header {
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
+        position: relative;
+        
+        .row {
+            height: 100%;
+        }
     }
 }
 
 // FOOTER
 footer {
     min-height: 300px;
-    background-color: #1d1d1d;
-    margin-top: 20px;
+    background-color: $background-color;
 
     h5 {
         font-size: .75rem;
@@ -182,7 +208,7 @@ footer {
         margin-bottom: 1rem;
         letter-spacing: .05em;
         text-transform: uppercase;
-        color: #f5a637;
+        color: $color;
     }
 
     p, a, li, .copyright {
@@ -196,163 +222,182 @@ footer {
     ul {
         padding: unset;
     }
-}
 
-.section-filler::before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    content: "";
-    background: linear-gradient(#fff, hsla(0, 0%, 100%, .1) 30%, transparent), linear-gradient(to bottom right, #fff 0, #fff 15%, transparent 30%, transparent);
-}
-
-.section-filler {
-    height: 100vh;
-    min-height: 500px;
-    background: url(https://i.vimeocdn.com/video/524253525.jpg?mw=1920&mh=1080&q=70) no-repeat 50%/cover;
-    padding: 6rem 0;
-}
-
-.section-gallery-item {
-    padding: 5px;
-    div {
-        height: 300px;
-        background-color: $gray;
+    ul li svg {
+        padding-right: 5px;
     }
 }
 
-
+// CAROUSEL
 .carousel {
     background: #EEE;
-  }
-  
-.carousel-cell {
-    width: 28%;
-    height: 200px;
-    margin-right: 10px;
-    background: #8C8;
-    border-radius: 5px;
-    counter-increment: carousel-cell;
+    .carousel-image {
+        display: block;
+        height: 300px;
+        /* set min-width, allow images to set cell width */
+        min-width: 150px;
+        max-width: 100%;
+        margin-right: 10px;
+        /* vertically center */
+        top: 50%;
+        transform: translateY(-50%)
+    }
 }
 
-.carousel-cell.is-selected {
-    background: #ED2;
+// SECTION
+.section__preheading {
+    font-family: Lato,sans-serif;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
 }
 
-/* cell number */
-.carousel-cell:before {
-    display: block;
-    text-align: center;
-    content: counter(carousel-cell);
-    line-height: 200px;
-    font-size: 80px;
-    color: white;
+.section__heading {
+    margin-bottom: 2.5rem;
 }
 
+.section__subheading {
+    margin-bottom: 2.5rem;
+}
 
-/* Card SVG */
-.card-title svg {
-    color: #009688;
+.section__heading+.section__subheading {
+    margin-top: -1.5rem;
+}
+
+// HOME
+.main-home {
+    // DISCOVER
+    .section-discover__heading {
+        color: #333333;
+        font-weight: 600;
+        margin-bottom: .8rem;
+    }
+    
+    .section-discover__description {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        position: relative;
+        color: #333333;
+    }
+    
+    .section-discover__description::before {
+        display: block;
+        width: 50px;
+        margin: 1rem 0;
+        content: "";
+        border-top: 5px solid #cddc39;
+    }
+    
+    .section-discover__filler::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        background: linear-gradient(#fff, hsla(0, 0%, 100%, .1) 30%, transparent), linear-gradient(to bottom right, #fff 0, #fff 15%, transparent 50%, transparent);
+    }
+    
+    .section-discover__filler {
+        height: 100vh;
+        min-height: 500px;
+        background: url(https://images7.alphacoders.com/101/thumb-1920-1011523.jpg) no-repeat 50%/cover;
+        padding: 6rem 0;
+    }
+
+    // ABOUT
+    .section-about__filler::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        background: linear-gradient(#fff, hsla(0, 0%, 100%, .1) 40%, transparent), linear-gradient(to bottom, #fff 0, #fff 15%, transparent 50%, transparent);
+    }
+    
+    .section-about__filler {
+        height: 100vh;
+        min-height: 500px;
+        background: url(https://www.eco.ca/wp-content/uploads/Working-home.jpg) no-repeat 50%/cover;
+        padding: 6rem 0;
+    }
+}
+
+// DISCOVER
+.main-discover {
+    // DISCOVER
+    .section-discover__heading {
+        color: #333333;
+        font-weight: 600;
+        margin-bottom: .8rem;
+    }
+    
+    .section-discover__description {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        position: relative;
+        color: #333333;
+    }
+    
+    .section-discover__description::before {
+        display: block;
+        width: 50px;
+        margin: 1rem 0;
+        content: "";
+        border-top: 5px solid #cddc39;
+    }
+    
+    .section-discover__filler::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        background: linear-gradient(#fff, hsla(0, 0%, 100%, .1) 30%, transparent), linear-gradient(to bottom right, #fff 0, #fff 15%, transparent 50%, transparent);
+    }
+    
+    .section-discover__filler {
+        height: 100vh;
+        min-height: 500px;
+        background: url(https://images7.alphacoders.com/101/thumb-1920-1011523.jpg) no-repeat 50%/cover;
+        padding: 6rem 0;
+    }
 }
 
 // ABOUT
-.section-about {
-    .section-about-image {
-        height: 400px;
-        background-position: 50% 10%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: sticky;
-        top: 0;
-        margin-bottom: 100px;
-        z-index: -10;
-    }
-}
-
-/* Resume */
-#img-profile {
-    border-radius: 50%;
-}
-
-.section-resume {
-    max-width: 1280px;
-    hr {
-        margin-bottom: 30px;
-    }
-
-    h4 {
-        font-size: 1.2rem;
-    }
-
-    h5 {
-        font-size: 1rem;
-    }
-
-    a, a:hover {
-        color: $dark;
-    }
-
-    @media (min-width: 992px) {
-        .pt-lg-15, .py-lg-15 {
-            padding-top: 12.5rem!important;
-        }
-    }
-
-    // Small devices (landscape phones, 576px and up)
-    @media (max-width: 575px) {
-        padding: 20px 0px;
-    }
-
-    @media (min-width: 576px) {
-        padding: 20px 0px;
-    }
-
-    // Medium devices (tablets, 768px and up)
-    @media (min-width: 768px) {
-        padding: 40px 0px;
-    }
-
-    // Large devices (desktops, 992px and up)
-    @media (min-width: 992px) {
-        padding: 40px 100px;
-    }
-
-    // Extra large devices (large desktops, 1200px and up)
-    @media (min-width: 1200px) {
-        padding: 40px 150px;
-    }
-
-    .section-resume-profile-details svg {
-        margin-right: 10px;
-    }
-
-    .ability-title {
-        display: inline-block;
-        width: 50%;
-    }
-    .ability-score {
-        float: right;
-    }
-}
-
-.section-resume-work {
-    .section-resume-work-header {
-        p {
-            padding-left: 15px;
-            line-height: .8rem;
-        }
+.main-about {
+    // ABOUT
+    .section-about__description {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        position: relative;
+        color: #333333;
     }
     
-    .section-resume-work-detail {
-        padding-left: 15px;
+    .section-about__description::before {
+        display: block;
+        width: 50px;
+        margin: 1rem 0;
+        content: "";
+        border-top: 5px solid #cddc39;
     }
-}
-
-.section-resume-education {
-    p {
-        line-height: .8rem;
-        padding-left: 15px;
+    .section-about__filler::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        background: linear-gradient(#fff, hsla(0, 0%, 100%, .1) 40%, transparent), linear-gradient(to bottom, #fff 0, #fff 15%, transparent 50%, transparent);
+    }
+    
+    .section-about__filler {
+        height: 100vh;
+        min-height: 500px;
+        background: url(https://www.eco.ca/wp-content/uploads/Working-home.jpg) no-repeat 50%/cover;
+        padding: 6rem 0;
     }
 }
